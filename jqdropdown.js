@@ -36,7 +36,8 @@ var jqdropdown = {
 				'vertical-align': 'top',
 				'list-style': 'none',
 				'display': 'inline-block',
-				'margin': 0
+				'margin': 0,
+				'position': 'absolute'
 			}).offset({
 				top: ev.pageY,
 				left: ev.pageX
