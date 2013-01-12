@@ -24,7 +24,7 @@ var jqdropdown = {
 			ev.stopImmediatePropagation();
 			ev.preventDefault();
 			
-			$('html').on(self.options.listenerEvent, { selector: self.selector }, self.removeDropdown);
+			$('html').on(self.options.listenerEvent + '.jqdropdown', { selector: self.selector }, self.removeDropdown);
 			$(self.selector).remove();
 			
 			var dropdown = self.buildMenu(self.options.dropdownId, self.options.dropdownClass, self.options.actions);
