@@ -69,7 +69,7 @@ var jqdropdown = {
 			var selector = self.selector;
 		}
 		
-		$(selector).slideUp();
+		$(selector).slideUp().remove();
 	}
 };
 
