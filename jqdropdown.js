@@ -1,9 +1,11 @@
 var jqdropdown = {
-	init: function( options, elem ) {
+	init: function( options, elem, elemSelector ) {
 		var self = this;
 		
-		self.elem    = elem;
-		self.$elem   = $(elem);
+		self.elem         = elem;
+		self.$elem        = $(elem);
+		self.elemSelector = elemSelector;
+		
 		self.options = $.extend({}, $.fn.jqdropdown.options, options);
 
 		if (self.options.dropdownId !== null) {
@@ -20,7 +22,7 @@ var jqdropdown = {
 	bind: function() {
 		var self = this;
 		
-		self.$elem.on(self.options.listenerEvent, function(ev) {
+		$(document).on(self.options.listenerEvent, self.elemSelector, function(ev) {
 			ev.stopImmediatePropagation();
 			ev.preventDefault();
 			
@@ -74,9 +76,11 @@ var jqdropdown = {
 };
 
 $.fn.jqdropdown = function( options ) {
+	var self;
+	
 	return this.each(function() {
 		var dropdown = Object.create(jqdropdown);
-		dropdown.init(options, this);
+		dropdown.init(options, this, self.selector);
 	});
 };
 
