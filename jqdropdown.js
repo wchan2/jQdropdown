@@ -76,7 +76,7 @@ var jqdropdown = {
 };
 
 $.fn.jqdropdown = function( options ) {
-	var self;
+	var self = this;
 	
 	return this.each(function() {
 		var dropdown = Object.create(jqdropdown);
