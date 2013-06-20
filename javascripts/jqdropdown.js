@@ -40,8 +40,8 @@ var jQdropdown = {
 				'margin': 0,
 				'position': 'absolute'
 			}).offset({
-				top: ev.pageY,
-				left: ev.pageX
+				top: event.pageY,
+				left: event.pageX
 			});
 		});
 	},
