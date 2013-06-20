@@ -46,20 +46,25 @@ var jQdropdown = {
 		});
 	},
 	buildMenu: function(dropdownId, dropdownClass, actions) {
-		var dropdownId    = (typeof dropdownId !== 'undefined') ? ' id="' + dropdownId + '"' : '';
-			dropdownClass = (typeof dropdownClass !== 'undefined') ? ' class="' + dropdownClass + '"' : '';		
-			dropdownMenu  = '<ul' + dropdownClass + ' ' + dropdownId + '>';
+		var $dropdownMenu = $('<ul />');
+
+		if (dropdownClass) {
+			$dropdownMenu.addClass(dropdownClass);
+		}
+
+		if (dropdownId) {
+			$dropdownMenu.attr('id', dropdownId);
+		}
 
 		if (actions.length <= 0) {
 			throw new Error('Invalid options: actions; must be an array of html elements');
 		}
 		
 		$.each(actions, function(index, action) {
-			dropdownMenu += '<li>' + action + '</li>';
+			$dropdownMenu.append($('<li />').html(action));
 		});
-		dropdownMenu += '</ul>';
 		
-		return $(dropdownMenu).hide();
+		return $dropdownMenu.hide();
 	},
 	removeDropdown: function(event) {
 		var selector;
