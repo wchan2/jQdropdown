@@ -3,7 +3,7 @@ jqdropdown
 
 Simple Dropdown Plugin in jQuery
 
-**USAGE**
+
 options
 --------
 * dropdownClass - class to attach to the outermost (ul) element of the dropdown (default null)
