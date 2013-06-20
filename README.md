@@ -15,7 +15,7 @@ options
 
 ```javascript
 $('.dropdown').jqdropdown({
-  dropdownClass: null, // class you want to add to the dropdown
+  	dropdownClass: null, // class you want to add to the dropdown
 	dropdownId: null, // id that you want to add to the dropdown
 	listenerEvent: 'click', // event in which to show the dropdown
 	zindex: 1,
