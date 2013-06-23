@@ -11,15 +11,18 @@ options
 * listenerEvent - event in which to trigger the dropdown (default = click)
 * zindex - z-index of the dropdown (default = 1)
 * bgcolor - background color of the dropdown (default = white)
-* actions - a list of actions to put into the dropdown (default is what is shown here for actions)
+* actions - a list of actions to put into the dropdown
+* css - a css object that is applied to the dropdown; please know what you are doing before overridding verticalAlign, listStyle, display, and position
 
 ```javascript
 $('.dropdown').jqdropdown({
   	dropdownClass: null, // class you want to add to the dropdown
 	dropdownId: null, // id that you want to add to the dropdown
 	listenerEvent: 'click', // event in which to show the dropdown
-	zindex: 1,
-	bgcolor: '#fff',
+	css: {
+		zindex: 1,
+		bgcolor: '#fff'
+	},
 	actions: [
 		'<a href="#">First Action</a>',
 		'<a href="#">Second Action</a>',

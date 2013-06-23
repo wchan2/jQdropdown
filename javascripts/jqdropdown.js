@@ -9,6 +9,8 @@
 			self.elemSelector = elemSelector;
 			
 			self.options = $.extend({}, $.fn.jQdropdown.options, options);
+			self.css = $.extend({}, $.fn.jQdropdown.css, $.fn.jQdropdown.css);
+			delete self.options.css;
 
 			if (self.options.dropdownId !== null) {
 				self.selector = '#' + self.options.dropdownId;
@@ -33,15 +35,7 @@
 				var dropdown = self.buildMenu(self.options.dropdownId, self.options.dropdownClass, self.options.actions);
 				$(this).after(dropdown);
 				
-				dropdown.slideDown().css({
-					'z-index': self.options.zindex,
-					'background-color': self.options.bgcolor,
-					'vertical-align': 'top',
-					'list-style': 'none',
-					'display': 'inline-block',
-					'margin': 0,
-					'position': 'absolute'
-				}).offset({
+				dropdown.slideDown().css(self.css).offset({
 					top: event.pageY,
 					left: event.pageX
 				});
@@ -90,12 +84,21 @@
 		});
 	};
 
+	$.fn.jQdropdown.css = {
+			verticalAlign: 'top',
+			listStyle: 'none',
+			display: 'inline-block',
+			margin: 0,
+			position: 'absolute',
+			zindex: 1,
+			bgcolor: '#fff'
+	};
+
 	$.fn.jQdropdown.options = {
 		dropdownClass: null,
 		dropdownId: null,
 		listenerEvent: 'click',
-		zindex: 1,
-		bgcolor: '#fff',
+		css: {},
 		actions: [
 			'<a href="#">First Action</a>',
 			'<a href="#">Second Action</a>',
