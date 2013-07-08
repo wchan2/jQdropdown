@@ -1,4 +1,5 @@
 ;(function( $ ) {
+	'use strict';
 
 	var jQdropdown = {
 		init: function( options, elem, elemSelector ) {
@@ -63,7 +64,8 @@
 			return $dropdownMenu.hide();
 		},
 		removeDropdown: function(event) {
-			var selector;
+			var self = this,
+					selector;
 
 			if (typeof event !== 'undefined') {
 				selector = event.data.selector;

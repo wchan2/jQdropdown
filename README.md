@@ -1,4 +1,4 @@
-jqdropdown
+jQdropdown
 ==========
 
 Simple Dropdown Plugin in jQuery
