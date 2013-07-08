@@ -15,7 +15,7 @@ options
 * **css** - a css object that is applied to the dropdown; please know what you are doing before overridding verticalAlign, listStyle, display, and position
 
 ```javascript
-$('.dropdown').jqdropdown({
+$('.dropdown').jQdropdown({
   	dropdownClass: null, // class you want to add to the dropdown
 	dropdownId: null, // id that you want to add to the dropdown
 	listenerEvent: 'click', // event in which to show the dropdown
