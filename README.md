@@ -30,3 +30,7 @@ $('.dropdown').jQdropdown({
 	]
 });
 ```
+
+## License
+
+jQdropdown.js is released under the [MIT License](http://www.opensource.org/licenses/MIT).
